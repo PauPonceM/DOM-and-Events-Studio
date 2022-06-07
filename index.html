@@ -5,6 +5,51 @@
         <link rel = "stylesheet" type = "text/css" href = "styles.css" />
         <script src = "scripts.js"></script>
     </head>
+    <script>
+        window.addEventListener("load", function(){
+            let takeoffConfirm = document.getElementById("takeoff");
+            takeoffConfirm.addEventListener("click", function(){
+        let answer = window.confirm("Confirm that the shuttle is ready for Take off");
+        if (answer===true){
+            let newFlightStatus = document.getElementById("flightStatus");
+            newFlightStatus.innerHTML = "Shuttle in flight"
+            let blueBackground = document.getElementById("shuttleBackground");
+            blueBackground.style.background = "blue";
+            let newHeight = document.getElementById("spaceShuttleHeight");
+            newHeight.innerHTML = "10,000";
+        }
+            })
+            let landAlert = document.getElementById("landing");
+            landAlert.addEventListener("click",function(){
+            alert("The shuttle is landing. Landing gear engaged.");
+            let newFlightStatus = document.getElementById("flightStatus");
+            newFlightStatus.innerHTML = "The shuttle has landed";
+            let blueBackground = document.getElementById("shuttleBackground");
+            blueBackground.style.background = "green";
+            let newHeight = document.getElementById("spaceShuttleHeight");
+            newHeight.innerHTML = "0";
+
+        })
+            let abortConfirm = document.getElementById("missionAbort");
+            abortConfirm.addEventListener("click", function(){
+            let answer = window.confirm("Confirm that you want to abort the mission");
+            if (answer===true){
+            let newFlightStatus = document.getElementById("flightStatus");
+            newFlightStatus.innerHTML = "Mission aborted"
+            let blueBackground = document.getElementById("shuttleBackground");
+            blueBackground.style.background = "red";
+            let newHeight = document.getElementById("spaceShuttleHeight");
+            newHeight.innerHTML = "0";
+            }
+        })
+        let moveUp = document.getElementById("up");
+            moveUp.addEventListener("click", function(){
+            let moveRocket = document.getElementById("rocket");
+            moveRocket = height + 10
+            })
+        })
+    
+    </script>
     <body>
         <div class="centered">
             <h1>Flight Simulator</h1>
